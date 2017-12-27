@@ -10,6 +10,7 @@
 
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    const v = 'me';
 
     function makeGreen() {
       const p = document.querySelector('p');
@@ -18,28 +19,48 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    console.log(`this is ${v}`);
+    console.log(`this is %s`, v);
 
     // Styled
+    console.log('%c hihi', 'color: red');
 
     // warning!
+    console.warn('warn');
 
     // Error :|
+    console.log('ooopp!');
 
     // Info
+    console.log('info');
 
     // Testing
+    console.assert(true, 'Test it!!!!!');
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    const elem = document.querySelector('p');
+    console.log(elem);
+    console.dir(elem);
 
     // Grouping together
 
     // counting
+    console.count('aa');
+    console.count('aa');
+  
 
     // timing
+    console.time('fetch data');
+    setTimeout(function(){
+      console.log('I am late');
+      console.timeEnd('fetch data');
+    }, 2000);
 
   </script>
 </body>
