@@ -13,6 +13,8 @@
     </div>
   </div>
 
+  <button>Click Once</button>
+
 <style>
   html {
     box-sizing: border-box;
@@ -37,8 +39,22 @@
   }
 </style>
 
-<button></button>
 <script>
+
+  const divs = document.querySelectorAll('div');
+  const button = document.querySelector('button');
+
+  function logText(e) {
+    console.log(this);
+    e.stopPropagation();
+  }
+
+  function click() {
+    console.log('clicked!!!');
+  }
+
+  divs.forEach(div => div.addEventListener('click', logText, { capture: false, once: false}));
+  button.addEventListener('click', click, {once: true});
 
 </script>
 </body>
